@@ -64,7 +64,6 @@ def row_checker():
     global global_row
     global global_d1
     global_d1 = pd.read_csv('netflix_titles.csv')
-
     z = (request.form.getlist('mycheckbox'))
     list_items.append(z)
     if (request.method == 'POST'):
@@ -91,10 +90,7 @@ def editor(columns = global_column_name, row = global_row):
     print(list_items)
     if (request.method == 'POST'):
         num = request.form.get("int_num")
-        print(global_d1[global_column_name][global_row])
         global_d1[global_column_name][global_row] = num
-        print(global_d1[global_column_name][global_row])
-        print(global_d1)
         return redirect(url_for('index'))
     return render_template('editing.html')
 
