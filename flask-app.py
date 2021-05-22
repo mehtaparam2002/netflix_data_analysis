@@ -63,7 +63,6 @@ def row_checker():
     global global_column_name
     global global_row
     global global_d1
-    global_d1 = pd.read_csv('netflix_titles.csv')
     z = (request.form.getlist('mycheckbox'))
     list_items.append(z)
     if (request.method == 'POST'):
